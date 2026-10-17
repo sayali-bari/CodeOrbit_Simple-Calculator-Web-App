@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100b24">
+    <title>NovaCalc | Smart Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="app">
+        <header class="topbar">
+            <a href="#" class="brand">
+                <span class="brand-icon">✦</span>
+                <span>Nova<span class="brand-highlight">Calc</span></span>
+            </a>
+
+            <button class="theme-toggle" id="themeToggle"
+                    aria-label="Toggle color theme" title="Toggle theme">
+                ☼
+            </button>
+        </header>
+
+        <section class="calculator-layout">
+            <div class="calculator">
+                <div class="calculator-heading">
+                    <div>
+                        <p class="eyebrow">SMART CALCULATOR</p>
+                        <h1>Calculate <span>anything.</span></h1>
+                    </div>
+                    <div class="status-dot" title="Ready"></div>
+                </div>
+
+                <div class="display-panel">
+                    <div class="display-label">
+                        <span>YOUR EXPRESSION</span>
+                        <button id="copyBtn" class="copy-btn"
+                                type="button" title="Copy result">COPY</button>
+                    </div>
+
+                    <div id="expression" class="expression" aria-live="polite"></div>
+                    <input
+                        type="text"
+                        id="display"
+                        class="display"
+                        value="0"
+                        aria-label="Calculator display"
+                        readonly
+                    >
+                    <p id="message" class="message">Ready for your next calculation</p>
+                </div>
+
+                <div class="keypad" id="keypad">
+                    <button class="key utility" data-action="clear">AC</button>
+                    <button class="key utility" data-action="delete">⌫</button>
+                    <button class="key utility" data-action="percent">%</button>
+                    <button class="key operator" data-value="/">÷</button>
+
+                    <button class="key" data-value="7">7</button>
+                    <button class="key" data-value="8">8</button>
+                    <button class="key" data-value="9">9</button>
+                    <button class="key operator" data-value="*">×</button>
+
+                    <button class="key" data-value="4">4</button>
+                    <button class="key" data-value="5">5</button>
+                    <button class="key" data-value="6">6</button>
+                    <button class="key operator" data-value="-">−</button>
+
+                    <button class="key" data-value="1">1</button>
+                    <button class="key" data-value="2">2</button>
+                    <button class="key" data-value="3">3</button>
+                    <button class="key operator" data-value="+">+</button>
+
+                    <button class="key utility" data-action="sign">±</button>
+                    <button class="key" data-value="0">0</button>
+                    <button class="key" data-action="decimal">.</button>
+                    <button class="key equals" data-action="calculate">=</button>
+                </div>
+
+                <div class="calculator-footer">
+                    <span><span class="keyboard-icon">⌨</span> Keyboard supported</span>
+                    <span>Made for precision <span class="sparkle">✦</span></span>
+                </div>
+            </div>
+
+            <aside class="history-panel">
+                <div class="history-heading">
+                    <div>
+                        <p class="eyebrow">YOUR ACTIVITY</p>
+                        <h2>History</h2>
+                    </div>
+                    <button id="clearHistory" class="clear-history"
+                            type="button">Clear</button>
+                </div>
+
+                <p class="history-description">
+                    Your recent calculations appear here.
+                </p>
+
+                <div id="historyList" class="history-list">
+                    <div class="empty-history">
+                        <span class="history-icon">↗</span>
+                        <p>No calculations yet</p>
+                        <span>Your results will appear here.</span>
+                    </div>
+                </div>
+
+                <div class="history-note">
+                    <span class="note-icon">✧</span>
+                    <p>Your calculation history stays in this page session.</p>
+                </div>
+            </aside>
+        </section>
+
+        <footer class="page-footer">
+            <p>© <span id="year"></span> NovaCalc</p>
+            <p>Simple math. Beautifully done.</p>
+        </footer>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
